@@ -82,25 +82,16 @@ fish pkgfile ttf-dejavu powerline
 ttf-font-awesome otf-font-awesome ttf-jetbrains-mono ttf-liberation adw-gtk-theme papirus-icon-theme nwg-look fastfetch
 ```
 
-# Русификация nemo
+# Русификация папок в проводнике
+```
+sudo pacman -S xdg-user-dirs
+xdg-user-dirs-update
+```
+
+При надобности отредактировать названия ~/.config/user-dirs.dirs
 
 ```
-cinnamon-translations
-```
-
-
-# fonts
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <alias>
-    <family>sans</family>
-    <prefer>
-      <family>DejaVu Sans</family>
-    </prefer>
-  </alias>
-</fontconfig>
+xdg-user-dirs-update
 ```
 
 
