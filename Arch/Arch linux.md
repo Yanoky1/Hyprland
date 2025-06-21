@@ -89,6 +89,21 @@ cinnamon-translations
 ```
 
 
+# fonts
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>sans</family>
+    <prefer>
+      <family>DejaVu Sans</family>
+    </prefer>
+  </alias>
+</fontconfig>
+```
+
+
 # Sddm тема, способ установки
 
 ```
