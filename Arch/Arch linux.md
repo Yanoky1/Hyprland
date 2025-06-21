@@ -96,6 +96,12 @@ xdg-user-dirs-update
 
 # Timeshift
 
+Установить
+```
+sudo pacman -S timeshift
+```
+
+
 Запусить на wayland вот так
 ```
 sudo -E timeshift-gtk 
