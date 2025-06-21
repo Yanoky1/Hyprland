@@ -68,9 +68,16 @@ nmcli device wifi connect "Сеть" password "Пароль"
 # Нужные доп пакеты
 
 `
-sudo pacman -S git curl hyprpaper hyprlock waybar telegram-desktop bitwarden qbittorrent mpv obsidian firefox nemo 7zip zip ttf-font-awesome otf-font-awesome ttf-jetbrains-mono ttf-liberation code brightnessctl adw-gtk-theme fish pkgfile ttf-dejavu powerline nwg-look papirus-icon-theme fastfetch
+sudo pacman -S git curl hyprpaper hyprlock waybar telegram-desktop bitwarden qbittorrent mpv obsidian firefox nemo nemo-fileroller 7zip zip ttf-font-awesome otf-font-awesome ttf-jetbrains-mono ttf-liberation code brightnessctl    
 `
 
+```fish
+fish pkgfile ttf-dejavu powerline
+```
+
+```customize
+adw-gtk-theme nwg-look papirus-icon-theme fastfetch
+```
 
 # Русификация nemo
 
