@@ -1,28 +1,24 @@
----
-tags: Linux
----
 
 
-> [!faq]- Полезное видео с установкой
-> https://www.youtube.com/watch?v=SBM2BUW-OH8&t=2s
+# Полезное видео с установкой
+https://www.youtube.com/watch?v=SBM2BUW-OH8&t=2s
 
+# Очистка Arch
+https://www.youtube.com/watch?v=zUbXOXqrZBs
+Команды из видео
+- Удаление кэша: pacman -Scc
+- Удаление "орфанов": pacman -Qtdq | pacman -Rns -
+- Удаление циркулярных зависимостей: pacman -Qqd | pacman -Rsu -
+- Информация о пакете: pacman -Qii
+- Вручную установленные пакеты: pacman -Qe
+- Сторонние пакеты: pacman -Qm
+- Та самая страшная команда: LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
+- То же самое, но короче: pacgrahp -c
+- Удаление вместе с зависимостями: pacman -Rns
 
-> [!faq]- Очистка Arch
-> https://www.youtube.com/watch?v=zUbXOXqrZBs
-> Команды из видео
-> - Удаление кэша: pacman -Scc
-> - Удаление "орфанов": pacman -Qtdq | pacman -Rns -
-> - Удаление циркулярных зависимостей: pacman -Qqd | pacman -Rsu -
-> - Информация о пакете: pacman -Qii
-> - Вручную установленные пакеты: pacman -Qe
-> - Сторонние пакеты: pacman -Qm
-> - Та самая страшная команда: LC_ALL=C pacman -Qi | awk '/^Name/{name=$3} /^Installed Size/{print $4$5, name}' | sort -h
-> - То же самое, но короче: pacgrahp -c
-> - Удаление вместе с зависимостями: pacman -Rns
-> 
-> Полезные ресурсы:
-> https://wiki.archlinux.org/title/syst...
-> https://wiki.archlinux.org/title/Pacm...
+# Полезные ресурсы:
+https://wiki.archlinux.org/title/syst...
+https://wiki.archlinux.org/title/Pacm...
 
 
 
@@ -50,7 +46,7 @@ nmcli device wifi connect "Сеть" password "Пароль"
 # Нужные доп пакеты
 
 ```
-sudo pacman -S git curl hyprpaper hyprlock waybar telegram-desktop bitwarden qbittorent mpv obsidian firefox nemo 7zip zip ttf-font-awesome otf-font-awesome ttf-jetbrains-mono ttf-liberation code brightnessctl adw-gtk-theme fish pkgfile ttf-dejavu powerline nwg-look papirus-icon-theme fastfetch
+sudo pacman -S git curl hyprpaper hyprlock waybar telegram-desktop bitwarden qbittorrent mpv obsidian firefox nemo 7zip zip ttf-font-awesome otf-font-awesome ttf-jetbrains-mono ttf-liberation code brightnessctl adw-gtk-theme fish pkgfile ttf-dejavu powerline nwg-look papirus-icon-theme fastfetch
 ```
 
 
