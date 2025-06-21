@@ -94,6 +94,12 @@ xdg-user-dirs-update
 xdg-user-dirs-update
 ```
 
+# Timeshift
+
+Запусить на wayland вот так
+```
+sudo -E timeshift-gtk 
+```
 
 # Sddm тема, способ установки
 
