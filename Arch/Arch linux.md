@@ -31,6 +31,28 @@ setfont cyr-sun16
 # Подключение к wifi
 
 ```
+iwctl
+```
+
+```
+station wlan0 scan
+```
+
+```
+station wlan0 get-networks
+```
+
+```
+station wlan0 connectl "wifi name"
+```
+
+```
+passphrase: "password wifi"
+```
+
+# Подключение к wifi после установки hyprland
+
+```
 nmcli
 ```
 
