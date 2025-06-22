@@ -1,3 +1,4 @@
+
 {
   "position": "top",
     "margin-top" : 2,
@@ -16,8 +17,8 @@
       "battery",
       "pulseaudio",
       "backlight",
-      // "bluetooth",
-      // "network",
+      "bluetooth",
+      "network",
       "clock",
       "custom/power",
     ],
@@ -60,9 +61,9 @@
     },
     "hyprland/language":{
 
-      "format": " {}",
-      "format-en": "EN",
-      "format-ru": "RU"
+      "format": "{shortDescription}",
+      // "format-en": "EN",
+      // "format-ru": "RU"
 
     },
     "battery": {
@@ -71,50 +72,62 @@
         "critical": 15
       },
       "format": "{icon} {capacity}%",
-      "format-charging": "{icon} {capacity}%",
-      "format-plugged": " {capacity}%",
       "format-alt": "{time} {icon}",
-      "format-icons": ["", "", "", "", ""]
+      "format-icons": {
+        "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+
+      },
+      "tooltip-format":"Осталось: {time}\nНапряжение: {power}\nЗдоровье: {health}",
     },
     "pulseaudio": {
       "format": "{icon} {volume}%",
-      "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": " {volume}%",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": "{icon} {format_source}",
+      "format-muted": "  {volume}%",
       "format-icons": {
+        "default": [" ", " ", " "],
         // "headphone": "",
         // "hands-free": "",
         // "headset": "",
         // "phone": "",
         // "portable": "",
         // "car": "",
-        "default": ["", "", ""]
+        
       },
       "on-click": "pavucontrol"
     },
     "backlight":{
 
-      "format": "☀️ {}%"
+      "format": "{icon} {percent}%",
+      "format-icons":["󰃞","󰃟","󰃠"]
 
     },
     "bluetooth": {
-      "format": "{icon} {status}",
+      "format": "{icon}",
+      "format-connected": "{icon} {device_alias} {device_battery_percentage}%",
       "format-icons": {
-        "enabled": "",
-        "disabled": ""
+        "battery": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "on": "󰂯",
+        "disabled": "󰂲",
+        "connected":"󰂱",
       },
       "on-click": "blueman-manager"
     },
     "network": {
-      "format-wifi": " {signalStrength}%",
-      // "tooltip-format": "{ifname} via {gwaddr} ",
-      "format-disconnected": "⚠",
-      "tooltip": false,
-      "on-click": "~/.config/wofi/wifi-menu.sh"
+      "format-wifi": "{icon} {essid}",
+      "format-disabled": "󰤮",
+      "format-disconnected": "󰤩",
+      "format-icons":{
+        "default": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+      },
+      "tooltip-format": "{icon} {essid} {signalStrength}%",
+      "tooltip-format-disconnected": "Wifi выключен",
+      "on-click":"nm-applet --indicator",
     },
     "clock": {
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format-alt": "{:%Y-%m-%d}"
+      // "format-alt": "{:%Y-%m-%d}"
     },
     "custom/power": {
 
