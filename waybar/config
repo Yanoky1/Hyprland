@@ -1,0 +1,121 @@
+{
+    "position": "top",
+    "height" : 28,
+    "reload_style_on_change": true,
+    "modules-left": [
+      "hyprland/workspaces",
+    ],
+    "modules-center": [
+      "clock",
+    ],
+    "modules-right": [
+      "tray",
+      "hyprland/language",
+      "battery",
+      "pulseaudio",
+      "backlight",
+      "bluetooth",
+      "network",
+      "custom/power",
+    ],
+    "hyprland/workspaces": {
+      
+      "on-click": "activate",
+      "sort-by-number": true,
+      
+      "format": "{icon}",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+      },
+    },
+    "tray":{
+
+      "format": "{icon}",
+      "all-outputs": true,
+      "spacing":10,
+      
+      "on-click": "activate"
+    
+    },
+    "hyprland/language":{
+
+      "format": "{shortDescription}",
+
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": {
+        "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+
+      },
+      "tooltip-format":"Осталось: {time}\nНапряжение: {power}\nЗдоровье: {health}",
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "max-volume": 150,
+      "format-bluetooth": "{icon}/󰂯 {volume}%",
+      "format-bluetooth-muted": " /󰂯 {volume}%",
+      "format-muted": "  Выкл",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", " "],
+        
+      },
+      "on-click": "kitty --title pulsemixer pulsemixer"
+    },
+    "backlight":{
+
+      "format": "{icon} {percent}%",
+      "format-icons":["󰃞","󰃟","󰃠"]
+
+    },
+    "bluetooth": {
+      "format": "{icon}",
+      "format-connected": "{icon} {device_alias} {device_battery_percentage}%",
+      "format-icons": {
+        "battery": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+        "on": "󰂯",
+        "disabled": "󰂲",
+        "connected":"󰂱",
+      },
+      "on-click": "kitty --title bluetuith bluetuith",
+      "max-length":15,
+    },
+    "network": {
+      "format-wifi": "{icon} {essid}",
+      "format-disabled": "󰤮 Выкл",
+      "format-disconnected": "{icon} Поиск",
+      "format-icons":{
+        "default": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+      },
+      "tooltip-format": "{icon} {essid} {signalStrength}%",
+      "tooltip-format-disconnected": "Wifi выключен",
+      "on-click":"kitty --title nmtui nmtui-connect",
+      "max-length":15,
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%d.%m.%Y}"
+    },
+    "custom/power": {
+
+      "format": " ",
+      "tooltip": false,
+      "on-click": "~/.config/wofi/power-menu.sh"
+
+    },
+}
