@@ -88,7 +88,8 @@
       "format-connected": "{icon} {device_alias} {device_battery_percentage}%",
       "format-icons": {
         "battery": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
-        "on": "󰂯",
+	"off":"󰂲", 
+	"on": "󰂯",
         "disabled": "󰂲",
         "connected":"󰂱",
       },
