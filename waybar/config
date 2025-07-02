@@ -23,13 +23,6 @@
       "on-click": "activate",
       "sort-by-number": true,
       
-      "format": "{icon}",
-      "format-icons": {
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-      },
     },
     "tray":{
 
@@ -46,16 +39,16 @@
 
     },
     "battery": {
+      "interval":15,
       "states": {
         "warning": 30,
         "critical": 15
       },
       "format": "{icon} {capacity}%",
-      "format-alt": "{time} {icon}",
+      "format-alt": "{icon} {time}",
       "format-icons": {
         "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
         "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
-
       },
       "tooltip-format":"Осталось: {time}\nНапряжение: {power}\nЗдоровье: {health}",
     },
@@ -88,8 +81,8 @@
       "format-connected": "{icon} {device_alias} {device_battery_percentage}%",
       "format-icons": {
         "battery": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
-	"off":"󰂲", 
-	"on": "󰂯",
+        "off":"󰂲", 
+        "on": "󰂯",
         "disabled": "󰂲",
         "connected":"󰂱",
       },

@@ -1,14 +1,14 @@
 #!/bin/bash
-Lock="Заблокировать"
-Logout="Выйти"
-Reboot="Перезагрузка"
-Shutdown="Выключить"
 
-chosen=$(printf " %s\n⏾ %s\n⏼ %s\n⏻ %s" "$Lock" "$Logout" "$Reboot" "$Shutdown" | wofi --dmenu)
+entries="⇠ Logout\n󰑙 Reboot\n⏻ Shutdown"
 
-case "$chosen" in
-  " $Lock") hyprlock ;;
-  "⏾ $Logout") hyprctl dispatch exit ;;
-  "⏼ $Reboot") systemctl reboot ;;
-  "⏻ $Shutdown") systemctl poweroff ;;
+selected=$(echo -e $entries|wofi --width 250 --height 210 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+
+case $selected in
+  logout)
+     hyprctl dispatch exit x;;
+  reboot)
+    exec systemctl reboot;;
+  shutdown)
+    exec systemctl poweroff -i;;
 esac
